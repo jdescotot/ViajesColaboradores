@@ -1,0 +1,43 @@
+﻿@model ViajesColaboradores.Models.SucursalModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>SucursalModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NombreSucursal" class="control-label"></label>
+                <input asp-for="NombreSucursal" class="form-control" />
+                <span asp-validation-for="NombreSucursal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Colaborador" class="control-label"></label>
+                <input asp-for="Colaborador" class="form-control" />
+                <span asp-validation-for="Colaborador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Distancia" class="control-label"></label>
+                <input asp-for="Distancia" class="form-control" />
+                <span asp-validation-for="Distancia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
